@@ -1,7 +1,8 @@
-[gd_scene load_steps=9 format=3 uid="uid://gsprv3i8ktv8"]
+[gd_scene load_steps=10 format=3 uid="uid://gsprv3i8ktv8"]
 
 [ext_resource type="PackedScene" uid="uid://bgfgajjlygfwc" path="res://Scenes/player.tscn" id="1_wrm1d"]
 [ext_resource type="Texture2D" uid="uid://gfdutwusnmt3" path="res://Assets/sprites/world_tileset.png" id="2_3dryh"]
+[ext_resource type="PackedScene" uid="uid://dkuxeeca3wj0o" path="res://Scenes/coin.tscn" id="3_3dryh"]
 [ext_resource type="PackedScene" uid="uid://dblvjw2wvftw7" path="res://Scenes/platform.tscn" id="3_wowpa"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_h845n"]
@@ -224,9 +225,24 @@ libraries = {
 }
 autoplay = "platform_move"
 
+[node name="Coin4" parent="Platform" instance=ExtResource("3_3dryh")]
+position = Vector2(-0.620117, -16.0192)
+rotation = 0.0237274
+
 [node name="Player" parent="." instance=ExtResource("1_wrm1d")]
 
 [node name="Camera2D" type="Camera2D" parent="Player"]
 position = Vector2(5, -13)
 zoom = Vector2(4, 4)
 limit_bottom = 45
+
+[node name="Coins" type="Node" parent="."]
+
+[node name="Coin" parent="Coins" instance=ExtResource("3_3dryh")]
+position = Vector2(65, -21)
+
+[node name="Coin2" parent="Coins" instance=ExtResource("3_3dryh")]
+position = Vector2(131, -18)
+
+[node name="Coin3" parent="Coins" instance=ExtResource("3_3dryh")]
+position = Vector2(183, -29)
