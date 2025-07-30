@@ -119,6 +119,131 @@ margin/bottom = 32.0
 text = "0"
 align = 1
 
+[node name="PowerUpBar" type="HBoxContainer" parent="UI"]
+anchor/top = 1.0
+anchor/right = 1.0
+anchor/bottom = 1.0
+margin/top = -80.0
+margin/left = 20.0
+margin/right = -20.0
+custom_constants/separation = 10
+alignment = 1
+
+[node name="PowerUpSlot1" type="PanelContainer" parent="UI/PowerUpBar"]
+margin/right = 239.0
+margin/bottom = 80.0
+rect/min_size = Vector2( 0, 80 )
+size_flags/horizontal = 3
+
+[node name="VBoxContainer" type="VBoxContainer" parent="UI/PowerUpBar/PowerUpSlot1"]
+margin/left = 7.0
+margin/top = 7.0
+margin/right = 232.0
+margin/bottom = 73.0
+alignment = 1
+
+[node name="NameLabel" type="Label" parent="UI/PowerUpBar/PowerUpSlot1/VBoxContainer"]
+margin/top = 13.0
+margin/right = 225.0
+margin/bottom = 27.0
+text = "---"
+align = 1
+
+[node name="StatusLabel" type="Label" parent="UI/PowerUpBar/PowerUpSlot1/VBoxContainer"]
+margin/top = 31.0
+margin/right = 225.0
+margin/bottom = 53.0
+text = "Recharging...
+(1)"
+align = 1
+
+[node name="PowerUpSlot2" type="PanelContainer" parent="UI/PowerUpBar"]
+margin/left = 249.0
+margin/right = 488.0
+margin/bottom = 80.0
+rect/min_size = Vector2( 0, 80 )
+size_flags/horizontal = 3
+
+[node name="VBoxContainer" type="VBoxContainer" parent="UI/PowerUpBar/PowerUpSlot2"]
+margin/left = 7.0
+margin/top = 7.0
+margin/right = 232.0
+margin/bottom = 73.0
+alignment = 1
+
+[node name="NameLabel" type="Label" parent="UI/PowerUpBar/PowerUpSlot2/VBoxContainer"]
+margin/top = 13.0
+margin/right = 225.0
+margin/bottom = 27.0
+text = "---"
+align = 1
+
+[node name="StatusLabel" type="Label" parent="UI/PowerUpBar/PowerUpSlot2/VBoxContainer"]
+margin/top = 31.0
+margin/right = 225.0
+margin/bottom = 53.0
+text = "Recharging...
+(2)"
+align = 1
+
+[node name="PowerUpSlot3" type="PanelContainer" parent="UI/PowerUpBar"]
+margin/left = 498.0
+margin/right = 737.0
+margin/bottom = 80.0
+rect/min_size = Vector2( 0, 80 )
+size_flags/horizontal = 3
+
+[node name="VBoxContainer" type="VBoxContainer" parent="UI/PowerUpBar/PowerUpSlot3"]
+margin/left = 7.0
+margin/top = 7.0
+margin/right = 232.0
+margin/bottom = 73.0
+alignment = 1
+
+[node name="NameLabel" type="Label" parent="UI/PowerUpBar/PowerUpSlot3/VBoxContainer"]
+margin/top = 13.0
+margin/right = 225.0
+margin/bottom = 27.0
+text = "---"
+align = 1
+
+[node name="StatusLabel" type="Label" parent="UI/PowerUpBar/PowerUpSlot3/VBoxContainer"]
+margin/top = 31.0
+margin/right = 225.0
+margin/bottom = 53.0
+text = "Recharging...
+(3)"
+align = 1
+
+[node name="PowerUpSlot4" type="PanelContainer" parent="UI/PowerUpBar"]
+margin/left = 747.0
+margin/right = 986.0
+margin/bottom = 80.0
+rect/min_size = Vector2( 0, 80 )
+size_flags/horizontal = 3
+
+[node name="VBoxContainer" type="VBoxContainer" parent="UI/PowerUpBar/PowerUpSlot4"]
+margin/left = 7.0
+margin/top = 7.0
+margin/right = 232.0
+margin/bottom = 73.0
+alignment = 1
+
+[node name="NameLabel" type="Label" parent="UI/PowerUpBar/PowerUpSlot4/VBoxContainer"]
+margin/top = 13.0
+margin/right = 225.0
+margin/bottom = 27.0
+text = "---"
+align = 1
+
+[node name="StatusLabel" type="Label" parent="UI/PowerUpBar/PowerUpSlot4/VBoxContainer"]
+margin/top = 31.0
+margin/right = 225.0
+margin/bottom = 53.0
+text = "Recharging...
+(4)"
+align = 1
+
 [node name="GridContainer" type="GridContainer" parent="UI"]
 anchor/left = 0.5
 anchor/top = 0.5
@@ -171,3 +296,7 @@ text = "Menu"
 
 [connection signal="pressed" from="UI/BackButton" to="." method="_on_BackButton_pressed"]
 [connection signal="timeout" from="OverallGameTimer" to="." method="_on_OverallGameTimer_timeout"]
+[connection signal="timeout" from="PowerUpTimer1" to="." method="_on_PowerUpTimer_timeout" binds=[ 0 ]]
+[connection signal="timeout" from="PowerUpTimer2" to="." method="_on_PowerUpTimer_timeout" binds=[ 1 ]]
+[connection signal="timeout" from="PowerUpTimer3" to="." method="_on_PowerUpTimer_timeout" binds=[ 2 ]]
+[connection signal="timeout" from="PowerUpTimer4" to="." method="_on_PowerUpTimer_timeout" binds=[ 3 ]]

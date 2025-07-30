@@ -1,0 +1,117 @@
+[gd_scene load_steps=2 format=1]
+
+[ext_resource path="res://scripts/multiplayer_lobby.gd" type="Script" id=1]
+
+[node name="MultiplayerLobby" type="Control"]
+
+anchor/right = 1
+anchor/bottom = 1
+script/script = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Title" type="Label" parent="."]
+
+anchor/left = 0.5
+anchor/top = 0.15
+anchor/right = 0.5
+anchor/bottom = 0.15
+margin/left = -100.0
+margin/right = 100.0
+margin/bottom = 14.0
+text = "Multiplayer Lobby"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="CenterContainer" type="VBoxContainer" parent="."]
+
+anchor/left = 0.5
+anchor/top = 0.5
+anchor/right = 0.5
+anchor/bottom = 0.5
+margin/left = -150.0
+margin/top = -100.0
+margin/right = 150.0
+margin/bottom = 100.0
+custom_constants/separation = 15
+alignment = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="NameLabel" type="Label" parent="CenterContainer"]
+
+margin/right = 300.0
+margin/bottom = 14.0
+text = "Enter Your Name:"
+align = 1
+
+[node name="NameEdit" type="LineEdit" parent="CenterContainer"]
+
+margin/top = 29.0
+margin/right = 300.0
+margin/bottom = 53.0
+align = 1
+max_length = 20
+
+[node name="HostButton" type="Button" parent="CenterContainer"]
+
+margin/top = 68.0
+margin/right = 300.0
+margin/bottom = 88.0
+text = "Host Game"
+
+[node name="HSeparator" type="HSeparator" parent="CenterContainer"]
+
+margin/top = 103.0
+margin/right = 300.0
+margin/bottom = 107.0
+
+[node name="AddressLabel" type="Label" parent="CenterContainer"]
+
+margin/top = 122.0
+margin/right = 300.0
+margin/bottom = 136.0
+text = "Enter Host Address:"
+align = 1
+
+[node name="AddressEdit" type="LineEdit" parent="CenterContainer"]
+
+margin/top = 151.0
+margin/right = 300.0
+margin/bottom = 175.0
+align = 1
+text = "127.0.0.1"
+
+[node name="JoinButton" type="Button" parent="CenterContainer"]
+
+margin/top = 190.0
+margin/right = 300.0
+margin/bottom = 210.0
+text = "Join Game"
+
+[node name="BackButton" type="Button" parent="."]
+
+anchor/left = 0.5
+anchor/top = 0.85
+anchor/right = 0.5
+anchor/bottom = 0.85
+margin/left = -60.0
+margin/top = -12.5
+margin/right = 60.0
+margin/bottom = 12.5
+rect/min_size = Vector2( 120, 25 )
+text = "Back to Menu"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[connection signal="pressed" from="CenterContainer/HostButton" to="." method="_on_HostButton_pressed"]
+
+[connection signal="pressed" from="CenterContainer/JoinButton" to="." method="_on_JoinButton_pressed"]
+
+[connection signal="pressed" from="BackButton" to="." method="_on_BackButton_pressed"]
