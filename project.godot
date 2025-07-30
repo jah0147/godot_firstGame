@@ -1,24 +1,14 @@
-; Engine configuration file.
-; It's best edited using the editor UI and not directly,
-; since the parameters that go here are not all obvious.
-;
-; Format:
-;   [section] ; section goes between []
-;   param=value ; assign values to parameters
-
-config_version=5
-
 [application]
 
-config/name="godot_firstGame"
-run/main_scene="uid://gsprv3i8ktv8"
-config/features=PackedStringArray("4.4", "Forward Plus")
-config/icon="res://icon.svg"
+name="Turdle"
+main_scene="res://scenes/main_menu.tscn"
 
-[dotnet]
+[display]
 
-project/assembly_name="FirstGame"
+width=1024
+height=600
 
-[rendering]
+[image_loader]
 
-textures/canvas_textures/default_texture_filter=0
+filter=false
+gen_mipmaps=false

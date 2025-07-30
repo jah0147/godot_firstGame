@@ -1,3 +1,11 @@
-# Godot 4+ specific ignores
-.godot/
-/android/
+# Godot-specific ignores
+# Covers Godot 2, 3
+.import/
+export.cfg
+export_presets.cfg
+
+# Mono-specific ignores
+.mono/
+
+# Cache folder
+.cache/
