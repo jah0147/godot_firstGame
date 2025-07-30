@@ -1,0 +1,141 @@
+[gd_scene load_steps=2 format=1]
+
+[ext_resource path="res://scripts/settings_menu.gd" type="Script" id=1]
+
+[node name="SettingsMenu" type="Control"]
+
+anchor/right = 1
+anchor/bottom = 1
+script/script = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Title" type="Label" parent="."]
+
+anchor/left = 0.5
+anchor/top = 0.15
+anchor/right = 0.5
+anchor/bottom = 0.15
+margin/left = -100.0
+margin/right = 100.0
+margin/bottom = 14.0
+text = "Settings"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="SettingsContainer" type="GridContainer" parent="."]
+
+anchor/left = 0.5
+anchor/top = 0.5
+anchor/right = 0.5
+anchor/bottom = 0.5
+margin/left = -220.0
+margin/top = -150.0
+margin/right = 220.0
+margin/bottom = 150.0
+columns = 2
+custom_constants/vseparation = 20
+custom_constants/hseparation = 20
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="MusicLabel" type="Label" parent="SettingsContainer"]
+margin/right = 210.0
+margin/bottom = 14.0
+text = "Menu Music Volume"
+align = 2
+valign = 1
+
+[node name="MusicVolumeSlider" type="HSlider" parent="SettingsContainer"]
+margin/left = 230.0
+margin/right = 440.0
+margin/bottom = 16.0
+rect/min_size = Vector2( 210, 16 )
+max_value = 100.0
+step = 1.0
+page = 0.0
+
+[node name="GameLabel" type="Label" parent="SettingsContainer"]
+margin/top = 36.0
+margin/right = 210.0
+margin/bottom = 50.0
+text = "Game Volume"
+align = 2
+valign = 1
+
+[node name="GameVolumeSlider" type="HSlider" parent="SettingsContainer"]
+margin/left = 230.0
+margin/top = 36.0
+margin/right = 440.0
+margin/bottom = 52.0
+rect/min_size = Vector2( 210, 16 )
+max_value = 100.0
+step = 1.0
+page = 0.0
+
+[node name="SfxLabel" type="Label" parent="SettingsContainer"]
+margin/top = 72.0
+margin/right = 210.0
+margin/bottom = 86.0
+text = "SFX Volume"
+align = 2
+valign = 1
+
+[node name="SfxVolumeSlider" type="HSlider" parent="SettingsContainer"]
+margin/left = 230.0
+margin/top = 72.0
+margin/right = 440.0
+margin/bottom = 88.0
+rect/min_size = Vector2( 210, 16 )
+max_value = 100.0
+step = 1.0
+page = 0.0
+
+[node name="FontLabel" type="Label" parent="SettingsContainer"]
+margin/top = 108.0
+margin/right = 210.0
+margin/bottom = 122.0
+text = "Font"
+align = 2
+valign = 1
+
+[node name="FontOptions" type="OptionButton" parent="SettingsContainer"]
+margin/left = 230.0
+margin/top = 108.0
+margin/right = 440.0
+margin/bottom = 128.0
+rect/min_size = Vector2( 210, 20 )
+focus/ignore_mouse = false
+focus/stop_mouse = true
+text = "Pixel Operator"
+items = [ "Pixel Operator", "Future Font 1", "Future Font 2" ]
+selected = 0
+
+[node name="BackButton" type="Button" parent="."]
+
+anchor/left = 0.5
+anchor/top = 0.85
+anchor/right = 0.5
+anchor/bottom = 0.85
+margin/left = -60.0
+margin/top = -12.5
+margin/right = 60.0
+margin/bottom = 12.5
+rect/min_size = Vector2( 120, 25 )
+focus/ignore_mouse = false
+focus/stop_mouse = true
+text = "Back"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[connection signal="value_changed" from="SettingsContainer/MusicVolumeSlider" to="." method="_on_MusicVolumeSlider_value_changed"]
+[connection signal="value_changed" from="SettingsContainer/GameVolumeSlider" to="." method="_on_GameVolumeSlider_value_changed"]
+[connection signal="value_changed" from="SettingsContainer/SfxVolumeSlider" to="." method="_on_SfxVolumeSlider_value_changed"]
+[connection signal="item_selected" from="SettingsContainer/FontOptions" to="." method="_on_FontOptions_item_selected"]
+[connection signal="pressed" from="BackButton" to="." method="_on_BackButton_pressed"]
